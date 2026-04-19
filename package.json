@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest --passWithNoTests",
+    "test": "jest --config jest.config.cjs --passWithNoTests",
+    "test:unit": "jest --config jest.config.cjs tests/unit --passWithNoTests",
+    "test:integration": "jest --config jest.config.cjs tests/integration --passWithNoTests",
+    "test:coverage": "jest --config jest.config.cjs --coverage --passWithNoTests",
     "test:e2e": "cypress run"
   },
   "dependencies": {
@@ -17,10 +20,15 @@
     "socket.io-client": "^4.7.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.35",
