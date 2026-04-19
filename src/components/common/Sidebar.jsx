@@ -4,14 +4,16 @@ import { useAuth } from "../../context/AuthContext";
 
 const roleNav = {
   admin: [
-    { label: "Dashboard",           path: "/admin/dashboard",    icon: "⬡" },
-    { label: "Create New Item",     path: "/admin/create-item",  icon: "✦" },
-    { label: "Food Stock",          path: "/admin/food-stock",   icon: "📦" },
-    { label: "Place Order",         path: "/admin/place-order",  icon: "◈" },
-    { label: "Process Orders",      path: "/admin/process-orders",icon: "◉" },
-    { label: "Invoice Management",  path: "/admin/invoices",     icon: "◻" },
-    { label: "Sales Summary",       path: "/admin/sales",        icon: "◈" },
-    { label: "User Management",     path: "/admin/users",        icon: "◎" },
+    { label: "Dashboard",           path: "/admin/dashboard",          icon: "⬡" },
+    { label: "Create New Item",     path: "/admin/create-item",        icon: "✦" },
+    { label: "Food Stock",          path: "/admin/food-stock",         icon: "📦" },
+    { label: "Place Order",         path: "/admin/place-order",        icon: "◈" },
+    { label: "Process Orders",      path: "/admin/process-orders",     icon: "◉" },
+    { label: "Invoice Management",  path: "/admin/invoices",           icon: "◻" },
+    { label: "Sales Summary",       path: "/admin/sales",              icon: "◈" },
+    { label: "User Management",     path: "/admin/users",              icon: "◎" },
+    { label: "Customers",           path: "/admin/customers",          icon: "👥" },
+    { label: "Customer Reports",    path: "/admin/customer-reports",   icon: "📊" },
   ],
   waiter: [
     { label: "Dashboard",     path: "/waiter/dashboard",       icon: "⬡" },
@@ -22,9 +24,11 @@ const roleNav = {
     { label: "View Orders",   path: "/waiter/view-orders",     icon: "◻" },
   ],
   cashier: [
-    { label: "Dashboard",    path: "/cashier/dashboard",       icon: "⬡" },
-    { label: "Invoice / Billing",path: "/cashier/billing",     icon: "◻" },
-    { label: "Sales Summary",path: "/cashier/sales",           icon: "◈" },
+    { label: "Dashboard",         path: "/cashier/dashboard",         icon: "⬡" },
+    { label: "Invoice / Billing", path: "/cashier/billing",           icon: "◻" },
+    { label: "Sales Summary",     path: "/cashier/sales",             icon: "◈" },
+    { label: "Customers",         path: "/cashier/customers",         icon: "👥" },
+    { label: "Customer Reports",  path: "/cashier/customer-reports",  icon: "📊" },
   ],
   customer: [
     { label: "Home",         path: "/customer/home",           icon: "⬡" },

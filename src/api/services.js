@@ -90,3 +90,8 @@ export const dashboardApi = {
   adminStats:  () => unwrap(apiClient.get('/dashboard/stats')),
   weeklySales: () => unwrap(apiClient.get('/dashboard/weekly-sales')),
 };
+
+// ════════════════════════════════════════════════════════════════════════════
+//  Customers API  (re-exported from customerServices for convenience)
+// ════════════════════════════════════════════════════════════════════════════
+export { customerApi, customerReportApi } from './customerServices';

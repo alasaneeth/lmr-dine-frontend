@@ -24,6 +24,11 @@ const SalesSummary        = lazy(() => import('./components/pages/admin/SalesSum
 const UserManagement      = lazy(() => import('./components/pages/admin/UserManagement'));
 const FoodStockManagement = lazy(() => import('./components/pages/admin/FoodStockManagement'));
 
+// ── NEW: Customer Management & Reports ────────────────────────────────────────
+const CustomerManagement  = lazy(() => import('./components/pages/admin/CustomerManagement'));
+const CustomerDetail      = lazy(() => import('./components/pages/admin/CustomerDetail'));
+const CustomerReports     = lazy(() => import('./components/pages/admin/CustomerReports'));
+
 // Customer
 const CustomerHome = lazy(() => import('./components/pages/customer/CustomerHome'));
 const MyOrders     = lazy(() => import('./components/pages/customer/MyOrders'));
@@ -76,6 +81,10 @@ export default function App() {
                         <Route path="admin/invoices"       element={<Guard roles={['admin']}><Lazy><InvoiceManagement /></Lazy></Guard>} />
                         <Route path="admin/sales"          element={<Guard roles={['admin']}><Lazy><SalesSummary /></Lazy></Guard>} />
                         <Route path="admin/users"          element={<Guard roles={['admin']}><Lazy><UserManagement /></Lazy></Guard>} />
+                        {/* NEW – Customer Management (Admin) */}
+                        <Route path="admin/customers"              element={<Guard roles={['admin']}><Lazy><CustomerManagement /></Lazy></Guard>} />
+                        <Route path="admin/customers/:id"          element={<Guard roles={['admin']}><Lazy><CustomerDetail /></Lazy></Guard>} />
+                        <Route path="admin/customer-reports"       element={<Guard roles={['admin']}><Lazy><CustomerReports /></Lazy></Guard>} />
 
                         {/* ── Customer ── */}
                         <Route path="customer/home"        element={<Guard roles={['customer']}><Lazy><CustomerHome /></Lazy></Guard>} />
@@ -94,6 +103,10 @@ export default function App() {
                         <Route path="cashier/dashboard"    element={<Guard roles={['cashier']}><Lazy><CashierDashboard /></Lazy></Guard>} />
                         <Route path="cashier/billing"      element={<Guard roles={['cashier']}><Lazy><InvoiceBilling /></Lazy></Guard>} />
                         <Route path="cashier/sales"        element={<Guard roles={['cashier']}><Lazy><CashierSales /></Lazy></Guard>} />
+                        {/* NEW – Customer Management (Cashier – read-only) */}
+                        <Route path="cashier/customers"           element={<Guard roles={['cashier']}><Lazy><CustomerManagement /></Lazy></Guard>} />
+                        <Route path="cashier/customers/:id"       element={<Guard roles={['cashier']}><Lazy><CustomerDetail /></Lazy></Guard>} />
+                        <Route path="cashier/customer-reports"    element={<Guard roles={['cashier']}><Lazy><CustomerReports /></Lazy></Guard>} />
 
                         <Route path="*" element={<Unauthorized />} />
                       </Routes>
