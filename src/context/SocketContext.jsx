@@ -6,7 +6,10 @@ import { getAccessToken } from '../api/apiClient';
 
 const SocketContext = createContext(null);
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+// Connecting to the current origin lets Vite's '/socket.io' WS proxy (dev)
+// and nginx's ws proxy (prod) handle the upgrade transparently.
+// Override via VITE_SOCKET_URL when you need a separate socket host.
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || window.location.origin;
 
 export function SocketProvider({ children }) {
   const { user }     = useAuth();

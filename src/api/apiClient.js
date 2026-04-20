@@ -1,7 +1,10 @@
 // src/api/apiClient.js
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
+// Relative path ('/api/v1') lets Vite's dev proxy and nginx handle routing.
+// Override via VITE_API_URL if you need a fully-qualified URL (e.g. testing
+// against a remote staging backend from a local machine).
+const BASE_URL = import.meta.env.VITE_API_URL ?? '/api/v1';
 
 /**
  * Primary Axios instance.
