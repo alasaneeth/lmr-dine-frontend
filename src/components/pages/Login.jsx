@@ -11,10 +11,10 @@ const roleHome = {
 };
 
 const hints = [
-  { role: 'Admin',    email: 'admin@resto.lk',    password: 'Admin@123' },
-  { role: 'Waiter',   email: 'waiter@resto.lk',   password: 'Waiter@123' },
-  { role: 'Cashier',  email: 'cashier@resto.lk',  password: 'Cashier@123' },
-  { role: 'Customer', email: 'customer@resto.lk', password: 'Customer@123' },
+  { role: 'Admin',    email: 'admin@resto.lk',    password: 'password' },
+  { role: 'Waiter',   email: 'waiter@resto.lk',   password: 'password' },
+  { role: 'Cashier',  email: 'cashier@resto.lk',  password: 'password' },
+  { role: 'Customer', email: 'customer@resto.lk', password: 'password' },
 ];
 
 export default function Login() {
